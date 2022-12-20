@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+
+# Load xG data as a list of (x, y) coordinates representing the location on the pitch where the shot was taken
+xg_data = [(0.5, 0.5), (0.7, 0.3), (0.3, 0.7)]
+
+# Set up the plot
+fig, ax = plt.subplots()
+ax.set_aspect('equal')
+
+# Draw the pitch
+plt.plot([0, 0, 1, 1, 0], [0, 1, 1, 0, 0], 'k-')
+plt.plot([0.2, 0.8], [0, 0], 'k-')
+plt.plot([0.2, 0.8], [1, 1], 'k-')
+plt.plot([0.5, 0.5], [0, 1], 'k-')
+
+# Plot the xG data as circles
+for x, y in xg_data:
+    plt.plot(x, y, 'ro')
+
+plt.show()
